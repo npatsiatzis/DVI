@@ -85,7 +85,7 @@ async def test_0_disparity(dut):
     """Check results and coverage for the tmds encoder"""
     """Test the operation of encoding with 0 disparity for every input"""
 
-    cocotb.start_soon(Clock(dut.i_clk, 10, units="ns").start())    #pixel clock
+    cocotb.start_soon(Clock(dut.i_clk, (1/(25*10**6)), units="sec").start())    #pixel clock
     disparity = 0
     await reset(dut)
 
@@ -108,7 +108,7 @@ async def test(dut):
     """Check results and coverage for the tmds encoder"""
     """Test the operation of running disparity"""
 
-    cocotb.start_soon(Clock(dut.i_clk, 10, units="ns").start())    #pixel clock
+    cocotb.start_soon(Clock(dut.i_clk, (1/(25*10**6)), units="sec").start())    #pixel clock
     disparity = 0
     await reset(dut)
 
